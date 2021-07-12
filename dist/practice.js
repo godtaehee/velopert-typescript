@@ -1,3 +1,14 @@
 "use strict";
-var message = 'hello';
-console.log(message);
+var count = 0;
+count += 1;
+count = '갑자기 문자열';
+var message = 'hello world';
+var done = true;
+var numbers = [1, 2, 3];
+var messages = ['hello', 'world'];
+messages.push(1);
+var mightBeUndefined = undefined;
+var nulableNumber = null;
+var color = 'red';
+color = 'yellow';
+color = 'green';
