@@ -1,5 +1,6 @@
 "use strict";
-function sum(x, y) {
-    return x + y + 'test';
+function sumaArray(number) {
+    return number.reduce(function (acc, current) { return acc + current; }, 0);
 }
-console.log(sum(1, 2));
+var total = sumaArray([1, 2, 3]);
+console.log(total);

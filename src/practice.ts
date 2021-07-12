@@ -1,5 +1,7 @@
-function sum(x: number, y:number): number {
-  return x+y;
+function sumaArray(number: number[]): number {
+  return number.reduce((acc, current) => acc + current, 0);
 }
 
-console.log(sum(1,2));
+const total: number = sumaArray([1,2,3]);
+
+console.log(total);
