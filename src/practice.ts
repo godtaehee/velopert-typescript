@@ -1,27 +1,10 @@
-type Person = {
-  name: string;
-  age?: number;
+function merge<A, B>(a: A, b: B): A & B {
+  return {
+    ...a,
+    ...b
+  };
 }
 
-// & 은 Intersection 으로서 두개 이상의 타입들을 합쳐줍니다.
-type Developer = Person & {
-  skills: string[];
-}
+const merged = merge({ foo: 1 }, { bar: 1 });
 
-const person: Person = {
-  name: '김태희'
-};
-
-const expert: Developer = {
-  name: '김개발',
-  skills: ['javascript', 'react']
-};
-
-type People = Person[];
-
-const people: People = [person, expert];
-
-type Color = 'red' | 'orange' | 'yellow';
-const color: Color = 'red';
-const colors: Color[] = ['red', 'orange'];
-
+console.log(merged);
