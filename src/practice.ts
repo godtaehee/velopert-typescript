@@ -2,17 +2,12 @@ interface Shape {
   getArea(): number;
 }
 
-class Circle implements Shape {
-
-  radius: number;
-
-  constructor(radius: number) {
-
+class Circle implements  Shape {
+  constructor(public radius: number) {
     this.radius = radius;
-
   }
 
-  getArea() {
+  getArea(): number {
     return this.radius * this.radius * Math.PI;
   }
 }
@@ -20,21 +15,19 @@ class Circle implements Shape {
 class Rectangle implements Shape {
   width: number;
   height: number;
-  constructor(width: number, height: number) {
 
+  constructor(width: number, height: number) {
     this.width = width;
     this.height = height;
-
   }
 
   getArea() {
     return this.width * this.height;
   }
-
 }
 
-const shapes: Shape[] = [new Circle(5), new Rectangle(10, 5)];
+const shapes: Shape [] = [new Circle(5), new Rectangle(10,5)];
 
-shapes.forEach(shape => {
-  console.log(shape.getArea());
-});
+shapes.forEach(shapes => {
+  console.log(shapes.getArea());
+})
