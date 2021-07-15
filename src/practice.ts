@@ -1,37 +1,22 @@
-interface Shape {
-  getArea(): number;
+interface Person {
+  name: string,
+  age?: number; // 물음표는 있어도되고 없어도되고
 }
 
-class Circle implements Shape {
-  constructor(public radius: number) {
-    this.radius = radius;
-  }
-
-  getArea() {
-    return this.radius * this.radius * Math.PI;
-  }
+interface Developer {
+  name: string;
+  age?: number;
+  skills: string[];
 }
 
-class Rectangle implements Shape{
-  constructor(private width: number, private height: number) {
-    this.width = width;
-    this.height = height;
-  }
+const person: Person = {
+  name: '김태희',
+  age: 20
+};
 
-  getArea() {
-    return this.width * this.height;
-  }
-
+const expert: Developer = {
+  name: '김개발',
+  skills: ['javascript', 'react']
 }
 
-const circle = new Circle(5);
-const rectangle = new Rectangle(10,5);
 
-console.log(circle.radius);
-// console.log(rectangle.width); // private은 외부에서 접근 X
-
-const shapes : Shape[] = [new Circle(5), new Rectangle(10, 5)];
-
-shapes.forEach(shape => {
-  console.log(shape.getArea());
-});
