@@ -1,15 +1,15 @@
-interface Person {
+type Person = {
   name: string;
   age?: number;
 }
 
-interface Developer extends Person {
+// & 은 Intersection 으로서 두개 이상의 타입들을 합쳐줍니다.
+type Developer = Person & {
   skills: string[];
 }
 
 const person: Person = {
-  name: '김태희',
-  age: 20
+  name: '김태희'
 };
 
 const expert: Developer = {
@@ -17,8 +17,11 @@ const expert: Developer = {
   skills: ['javascript', 'react']
 };
 
-const people: Person[] = [person, expert];
+type People = Person[];
 
-console.log(people[0].name);
+const people: People = [person, expert];
 
+type Color = 'red' | 'orange' | 'yellow';
+const color: Color = 'red';
+const colors: Color[] = ['red', 'orange'];
 
