@@ -28,7 +28,7 @@ const circle = new Circle(5);
 const rectangle = new Rectangle(10,5);
 
 console.log(circle.radius);
-console.log(rectangle.width); // private은 외부에서 접근 X
+// console.log(rectangle.width); // private은 외부에서 접근 X
 
 const shapes : Shape[] = [new Circle(5), new Rectangle(10, 5)];
 
