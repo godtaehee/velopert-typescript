@@ -1,10 +1,9 @@
-function merge<A, B>(a: A, b: B): A & B {
-  return {
-    ...a,
-    ...b
-  };
+interface Items<T> {
+  list: T[];
 }
 
-const merged = merge({ foo: 1 }, { bar: 1 });
+const items: Items<string> = {
+  list: ['a', 'b', 'c']
+};
 
-console.log(merged);
+console.log(items);
