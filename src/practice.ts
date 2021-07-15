@@ -2,21 +2,18 @@ interface Shape {
   getArea(): number;
 }
 
-class Circle implements  Shape {
+class Circle implements Shape {
   constructor(public radius: number) {
     this.radius = radius;
   }
 
-  getArea(): number {
+  getArea() {
     return this.radius * this.radius * Math.PI;
   }
 }
 
-class Rectangle implements Shape {
-  width: number;
-  height: number;
-
-  constructor(width: number, height: number) {
+class Rectangle implements Shape{
+  constructor(private width: number, private height: number) {
     this.width = width;
     this.height = height;
   }
@@ -24,10 +21,17 @@ class Rectangle implements Shape {
   getArea() {
     return this.width * this.height;
   }
+
 }
 
-const shapes: Shape [] = [new Circle(5), new Rectangle(10,5)];
+const circle = new Circle(5);
+const rectangle = new Rectangle(10,5);
 
-shapes.forEach(shapes => {
-  console.log(shapes.getArea());
-})
+console.log(circle.radius);
+console.log(rectangle.width); // private은 외부에서 접근 X
+
+const shapes : Shape[] = [new Circle(5), new Rectangle(10, 5)];
+
+shapes.forEach(shape => {
+  console.log(shape.getArea());
+});
